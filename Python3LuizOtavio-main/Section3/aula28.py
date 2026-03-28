@@ -16,8 +16,8 @@ Se nada for digitado em nome ou idade:
 
 nome = input("Digite seu nome: ")
 idade = input("Digite sua idade: ")
-idade_real = int(idade)
-if nome and idade: #idade e nome não sendo none
+
+if nome != "" and idade != "": #idade e nome não sendo none
     print(f"Seu nome é {nome}")
     print(f"Seu nome invertido é {nome[::-1]}") #invertendo nome
     if ' ' in nome:
