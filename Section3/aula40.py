@@ -5,6 +5,7 @@ while True:
     numero2 = input("Digite seu segundo número: ")
     operacao = input("Digite sua operação: ")
     try:
+        print("Realizando sua operação!!!")
         numero1_real = int(numero1)
         numero2_real = int(numero2)
         operacao in operacoes_permitados #verificar se tá entre os permidos
