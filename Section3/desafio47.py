@@ -15,6 +15,9 @@ Faça a contagem de tentativas do seu
 usuário.
 """
 
+import os
+
+
 palavra_secreta = "guilherme"
 letras_certas = ""
 tentativas = 0
@@ -23,7 +26,7 @@ while True:
     tentativas += 1
     entrada = input("Digite sua letra: ").lower()
 
-    if (len(entrada) > 1):
+    if len(entrada) > 1:
         print("Digite alguma letra")
         continue
 
