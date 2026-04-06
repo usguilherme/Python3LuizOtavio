@@ -18,6 +18,8 @@ pessoas = [("João", 25), ("Maria", 20), ("Ana", 30)] #ordenar pela a idade dele
 pessoas_ordenadas = sorted(pessoas, key = lambda x: x[1]) #lambda argumentos: regra a ser ordenado
 print(pessoas_ordenadas)
 
+pessoas_ordenadas_contrario = sorted(pessoas, key = lambda x: x[1], reverse= True) #lambda argumentos: regra a ser ordenado, reverso
+print(pessoas_ordenadas_contrario) #decrescente
 
 
 
