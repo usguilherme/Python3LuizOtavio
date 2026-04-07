@@ -17,4 +17,6 @@ print(list(resultado1))
 resultado2 = reduce(lambda x,y: x + y, array)
 print(resultado2) #somatório de todos
 
+resultado3 = reduce(lambda x,y: x * y, array)
+print(resultado3) #multiplicação de todos
 
