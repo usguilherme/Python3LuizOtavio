@@ -11,6 +11,7 @@
 
 
 import os
+import json
 
 
 def listar_tarefas(tarefas):
@@ -47,7 +48,27 @@ def adicionar(tarefa, tarefas):
     tarefas.append(tarefa)
     print()
 
-tarefas = []
+
+def ler(caminho_do_arquivo, tarefas):
+    dados = []
+    try:
+        with open(caminho_do_arquivo, 'r', encoding= 'utf8') as arquivo:
+            dados = json.load(arquivo)
+    except FileNotFoundError:
+        print('Arquivo não existe')
+        salvar(tarefas, caminho_do_arquivo) #se não existir, crio ele
+    return dados
+
+def salvar(tarefas, caminho_arquivo):
+    dados = tarefas
+    with open(caminho_arquivo, 'w', encoding= 'utf8') as arquivo:
+            json.dump(tarefas, arquivo, indent = 2, ensure_ascii=False)
+    return dados
+
+
+
+CAMINHO_ARQUIVO = 'aula119.json'
+tarefas = ler(CAMINHO_ARQUIVO, [])
 tarefas_desfeitas = []
 while True:
     print("Comandos: listar, desfazer, refazer")
@@ -58,13 +79,16 @@ while True:
         continue
     elif tarefa == 'desfazer':
         desfazer(tarefas, tarefas_desfeitas)
+        salvar(tarefas, CAMINHO_ARQUIVO)
         continue
     elif tarefa == 'refazer':
         refazer(tarefas, tarefas_desfeitas)
+        salvar(tarefas, CAMINHO_ARQUIVO)
     elif tarefa == 'clear':
         os.system('cls' if os.name == 'nt' else 'clear')
         continue
     else:
         adicionar(tarefa, tarefas)
         listar_tarefas(tarefas)
+        salvar(tarefas,CAMINHO_ARQUIVO) #adicionando no json
         continue    
