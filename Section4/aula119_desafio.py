@@ -51,10 +51,10 @@ def adicionar(tarefa, tarefas):
 
 def ler(caminho_do_arquivo, tarefas):
     dados = []
-    try:
+    try: #se existir o arquivo
         with open(caminho_do_arquivo, 'r', encoding= 'utf8') as arquivo:
             dados = json.load(arquivo)
-    except FileNotFoundError:
+    except FileNotFoundError: #não existindo, crio ele
         print('Arquivo não existe')
         salvar(tarefas, caminho_do_arquivo) #se não existir, crio ele
     return dados
@@ -64,7 +64,6 @@ def salvar(tarefas, caminho_arquivo):
     with open(caminho_arquivo, 'w', encoding= 'utf8') as arquivo:
             json.dump(tarefas, arquivo, indent = 2, ensure_ascii=False)
     return dados
-
 
 
 CAMINHO_ARQUIVO = 'aula119.json'
