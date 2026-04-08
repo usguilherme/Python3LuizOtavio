@@ -84,6 +84,7 @@ while True:
     elif tarefa == 'refazer':
         refazer(tarefas, tarefas_desfeitas)
         salvar(tarefas, CAMINHO_ARQUIVO)
+        continue
     elif tarefa == 'clear':
         os.system('cls' if os.name == 'nt' else 'clear')
         continue
