@@ -1,0 +1,16 @@
+[
+  {
+    "nome": "PC1",
+    "processador": "i5",
+    "placa_mae": "Asus",
+    "memoria_ram": "16GB",
+    "fonte": "500W"
+  },
+  {
+    "nome": "PC2",
+    "processador": "Ryzen 7",
+    "placa_mae": "Gigabyte",
+    "memoria_ram": "32GB",
+    "fonte": "650W"
+  }
+]
