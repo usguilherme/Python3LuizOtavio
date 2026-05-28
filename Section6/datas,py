@@ -10,4 +10,8 @@ data2 = datetime(2026, 5, 28, 12, 30, 30) #Ano, mês, dia, horas, minutos, segun
 data_str_data = "2026-05-28 20:43:50"
 data_str_fmt = '%Y-%m-%d %H:%M:%S'
 datanew = datetime.strptime(data_str_data, data_str_fmt) #a data que eu coloquei, e o tipo de formatação dela
-print(datanew)
+#print(datanew)
+
+#descobrir que horas é nesse exato momento, hora atual no meu computador
+horanow = datetime.now()
+print(horanow)
