@@ -1,0 +1,13 @@
+from datetime import datetime
+
+#criando datas
+data = datetime(2026, 5, 28) #Ano, mês, dia
+data2 = datetime(2026, 5, 28, 12, 30, 30) #Ano, mês, dia, horas, minutos, segundos
+#print(data)
+#print(data2)
+
+#criando data utlizando strptime()
+data_str_data = "2026-05-28 20:43:50"
+data_str_fmt = '%Y-%m-%d %H:%M:%S'
+datanew = datetime.strptime(data_str_data, data_str_fmt) #a data que eu coloquei, e o tipo de formatação dela
+print(datanew)
