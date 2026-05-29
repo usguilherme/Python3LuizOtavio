@@ -18,7 +18,6 @@
 import os
 caminho = os.path.join('home', 'users', 'Desktop', 'cursos', 'arquivo.txt')
 print(caminho)
-diretorio, arquivo = os.path.split(caminho) #cria uma tupla com o diretorio e o arquivo
+pasta= os.path.split(caminho) #cria uma tupla com o diretorio e o arquivo
 print(os.path.exists(caminho)) #verificar se o caminho existe no meu computador
-print(diretorio)
-print(arquivo)
+print(pasta)
