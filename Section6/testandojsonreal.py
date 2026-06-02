@@ -29,10 +29,10 @@ dados = [
 #armazenar dados em um arquivo.json
 link = os.path.join('C:\\', 'Users', 'Guilherme','Documents', 'Python3LuizOtavio-main','Section6', 'dados.json' )
 
-with open(link, 'w', encoding = 'utf-8') as arquivo: #tranformo dicionário para json
+with open(link, 'w', encoding = 'utf-8') as arquivo: #tranformo lista de dicionário para json
     json.dump(dados, arquivo, indent = 2)
 
-with open(link, 'r', encoding= 'utf-8') as arquivo: #tranformo json para dicionário
+with open(link, 'r', encoding= 'utf-8') as arquivo: #tranformo json para objeto python
     resultados = json.load(arquivo)
 
 print(resultados)
