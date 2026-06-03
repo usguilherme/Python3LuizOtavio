@@ -6,7 +6,7 @@
 # é no dia 20 de cada mês.
 # - Crie a data do empréstimo
 # - Crie a data do final do empréstimo
-# - Mostre todas as datas de vencimento e o valor de cada parcela
+# - Mostre todas as datas de vencimento e o valor de cada parcela 
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
