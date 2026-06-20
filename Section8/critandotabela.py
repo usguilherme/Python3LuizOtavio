@@ -13,7 +13,7 @@ cursor.execute('''
 )
 ''')
 
-#SALVANDO TABELA
+#SALVANDO ALTERACOES NA TABELA
 connect.commit()
 
 #INSERINDO USUARIO
@@ -21,7 +21,7 @@ cursor.execute('''
     INSERT INTO usuarios(nome, idade, altura) VALUES (?,?,?)''',
     ('Guilherme', 21, 1.91))
 
-#SALVANDO TABELA
+#SALVANDO ALTERACOES NA TABELA
 connect.commit()
 
 #FECHANDO TABELA
