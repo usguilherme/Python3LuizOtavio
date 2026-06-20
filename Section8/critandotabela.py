@@ -24,7 +24,7 @@ cursor.execute('''
 #SALVANDO ALTERACOES NA TABELA
 connect.commit()
 
-#FECHANDO TABELA
+#FECHANDO CONEXAO
 connect.close()
 
 
