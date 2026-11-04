@@ -24,12 +24,13 @@ connection.commit() #salvando minhas modificaçoes
 
 #INSERINDO DADOS NO SQLITE
 
-cursor.execute(f'INSERT INTO {TABLE_NAME} (nome, idade, peso) VALUES (?,?,?)', ('Valessa Nascimento', 22, 51)) #inserindo valores
-cursor.executemany( #inserindo varios valores
-    f'INSERT INTO {TABLE_NAME} (nome, idade, peso) VALUES (?,?,?)', 
-    [('Guilherme', 21, 82), ('Cassia', 50, 62)]
-)
+#cursor.execute(f'INSERT INTO {TABLE_NAME} (nome, idade, peso) VALUES (?,?,?)', ('Valessa Nascimento', 22, 51)) #inserindo valores
+#cursor.executemany( #inserindo varios valores
+    #f'INSERT INTO {TABLE_NAME} (nome, idade, peso) VALUES (?,?,?)', 
+    #[('Guilherme', 21, 82), ('Cassia', 50, 62)]
+#)
 
+#DELETAR MINHA TABELA
 
 connection.commit() #Salvo minha tabela
 
