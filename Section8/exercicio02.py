@@ -43,9 +43,8 @@ def inicializadorTabelas():
 
     connection.commit() #dando commit nas tabelas
 
-    #Funcoes departamento
 
-    #funcão pra inserir departamentos
+    #Funcoes departamento
     def inserirDepartamento(nome, descricao, responsavel):
         cursor.execute('''
             INSERT INTO {TABLE_NAME2} (nome, descricao, responsavel) VALUES (?,?,?)''', (nome, descricao, responsavel)
@@ -69,7 +68,7 @@ def inicializadorTabelas():
         SELECT * 
         FROM {TABLE_NAME2} 
         WHERE id = ?''', (id_departamento))
-        
+
         departamento = cursor.fetchone #retorna só um registro
         return departamento
 
@@ -91,9 +90,52 @@ def inicializadorTabelas():
         print(f'Departamento {id_departamento} deletado com sucesso!')
 
 
+    #FUNCOES DA TABELA CLIENTE
+    def inserirCliente(nome, email, telefone, cpf, idade, cidade, endereco, data_cadastro, departamento_id):
+        try:
+            cursor.execute(f'''
+            INSERT INTO {TABLE_NAME1} (nome, email, telefone, cpf, idade, cidade, endereco, data_cadastro, departamento_id)
+            VALUES (?,?,?,?,?,?,?,?,?)''', (nome, email, telefone, cpf, idade, cidade, endereco, data_cadastro, departamento_id))
+            connection.commit()
+            print(f'Cliente {nome} cadastradi com sucesso!')
+        except sqlite3.Error as erro:
+            connection.rollback() #desfaz alteração do meu bd
+            print(f'Cliente {nome} cadastrado com sucesso!')
+    
+    def buscarClientes():
+        cursor.execute('SELECT * FROM {TABLE_NAME1}')
+        clientes = cursor.fetchall
+        for cli in clientes:
+            print(cli)
 
+        print('---')
+        return clientes
 
+    def buscarClienteId(id_cliente):
+        cursor.execute(f''' 
+            SELECT *
+            FROM {TABLE_NAME1}
+            WHERE id = ?
+        ''', (id_cliente,))
+        cliente = cursor.fetchone()
+        return cliente
 
+    def atualizarCliente(id_cliente, nome, email, telefone, cpf, idade, cidade, endereco, data_cadastro, departamento_id):
+        cursor.execute(f'''
+            UPDATE {TABLE_NAME1}
+            SET nome = ?, email = ?, telefone = ?, cpf = ?, idade = ?,
+                cidade = ?, endereco = ?, data_cadastro = ?, departamento_id = ?
+            WHERE id = ?''', (nome, email, telefone, cpf, idade, cidade, endereco, data_cadastro, departamento_id, id_cliente))
+        connection.commit()
+        print(f'Cliente {id_cliente} atualizado com sucesso!')
+
+    def removerCliente(id_cliente):
+        cursor.execute(f'''
+            DELETE FROM {TABLE_NAME1}
+            WHERE id = ?''', (id_cliente,)
+        )
+        connection.commit()
+        print(f'Cliente {id_cliente} removido com sucesso!')
 
 
 
