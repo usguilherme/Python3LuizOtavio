@@ -188,3 +188,6 @@ def buscarDepartamentoMaisClientes():
     ''')
     resultado = cursor.fetchone()
     return resultado
+
+def fecharConexao():
+    return connection.close()
